@@ -1,0 +1,71 @@
+* {
+	color: #555;
+	padding: 0;
+	margin: 0;
+	font-weight: normal;	
+}
+body {
+	font: 80%/1.6 "Lucida Sans Unicode", "Lucida Grande", Arial, Helvetica, sans-serif;
+	background: #ccc url(images/bubbles.gif);
+}
+#container {
+	max-width: 42em;
+	padding: 25px 4em 4em;
+	background: #fff url(images/fade.gif) right repeat-y;
+}
+p {
+	margin-top: 1em;
+}
+a {
+	color: #06c;
+}
+a:hover {
+	text-decoration: none;
+}
+h1 {
+	position: absolute;
+	top: -70px;
+	left: -5px;
+}
+h2, #intro {
+	color: #888;
+	color: #690;
+	font-size: 1.5em;
+	line-height: 1.25;
+	margin-top: 2.2em;
+}
+#intro {
+	margin: 0 0 0 2em;
+	padding-left: 230px;
+	min-height: 197px;
+}
+em {
+	font-style: normal;
+	color:#000;
+}
+#intro em {
+	color :#360;
+}
+#intro2 {
+	margin-top: 3em;
+}
+#next {
+	background: #ffc;
+	border: 2px dotted #fe0;
+	padding: 1em;
+	color: #b52;
+}
+#next em {
+	display: block;
+	font-size: 1.5em;
+	color: #b52;
+}
+#next span {
+	position: absolute;
+	left:-99em;
+}
+
+.GMapEZ {
+	height: 300px;
+	margin-top: 1em;
+}
