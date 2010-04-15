@@ -51,10 +51,19 @@ function getMiddleDay($day, $month, $year) {
     return array_shift($potentials);
 }
 
+
 $timestamp = getMiddleDay('thursday', date('n'), date('Y'));
 
 if (time() > strtotime('10pm', $timestamp)) {
-    $nextMonth = strtotime('next month');
+
+    // Strtotime is dumb when the number of days in the current month is
+    // larger than the next, so drop back to the 28th to avoid this
+    $currentTime = time();
+    if (date('j') > 28) {
+        $currentTime = mktime(date('H'), date('i'), date('s'), date('n'), 28);
+    }
+
+    $nextMonth = strtotime('next month', $currentTime);
     $timestamp = getMiddleDay(
         'thursday', 
         date('n', $nextMonth), 
@@ -62,19 +71,7 @@ if (time() > strtotime('10pm', $timestamp)) {
     );
 }
 
-
-$timestamp = getMiddleDay('thursday', date('n'), date('Y'));
-
-if (time() > strtotime('10pm', $timestamp)) {
-    $nextMonth = strtotime('next month');
-    $timestamp = getMiddleDay(
-        'thursday', 
-        date('n', $nextMonth), 
-        date('Y', $nextMonth)
-    );
-}
-
-print date('jS F',$timestamp);
+print date('jS F', $timestamp);
 
 ?> <em><span>(</span><?
 
